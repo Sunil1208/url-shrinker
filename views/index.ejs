@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Resources/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>URL Shrinker</title>
+</head>
+
+<body style="background-image: url('./3451407.jpg'); background-size: cover;">
+    <br>
+    <img src="./logo.png" alt="" style="margin-left: 22%;width: 750px;">
+    <h1></h1>
+    <div class="container" style="display: inline-block;max-width: 900px; position: absolute;left: 22%;">
+
+        <br>
+        <form action="/shortUrls" 0 auto; auto;d="POST" class="my-4 form-inline">
+            <label for="fullUrl" class="sr-only">Url</label>
+            <input required placeholder="Enter Url" type="url" name="fullUrl" id="fullUrl"
+                class="form-control col-md-9 mr-1">
+            <button class="btn btn-success" type="submit">Shrink</button>
+        </form>
+        <table class="table table-striped table-hover col-md-10" style="border: 1px solid skyblue">
+            <caption style="caption-side: top;">History</caption>
+            <thead class="col-md-12">
+                <tr">
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th style="text-align: center;">Clicks</th>
+                    <th></th>
+                </tr">
+            </thead>
+            <tbody>
+                <% shortUrls.forEach(shortUrl =>{ %>
+                <tr>
+                    <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                    <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                    <td style="text-align: center;"><%= shortUrl.clicks %> </td>
+                    <td style="text-align: right;"><span><button class="btn btn-outline-dark"><i class="fa fa-trash"
+                                    aria-hidden="true"></i></button></span></td>
+                </tr>
+                <%   }) %>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
